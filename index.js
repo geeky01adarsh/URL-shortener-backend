@@ -12,7 +12,7 @@ const app = express();
 mongoose.set("strictQuery", false);
 mongoose
   .connect(
-    `mongodb+srv://admin:${process.env.MONGODB_PASS}@cluster0.yf2kxjy.mongodb.net/?retryWrites=true&w=majority`
+    process.env.MONGODB_URL
   )
   .then(() => console.log("Successfully connected to the database"));
 
