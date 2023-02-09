@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" align="center">
+        <h1>URL Shortner</h1>
+        <input type="text" name="URL" id="url-text" placeholder="Enter your URL">
+        <button name="generate" id="generate">Get URL</button>
+        <p id="shorten-link"></p>
+    </div>
+
+    <script>
+        const generate_btn = document.getElementById("generate");
+        const BASE_URL = "http://localhost:5000";
+        generate_btn.addEventListener("click", async()=>{
+            const longURL = document.getElementById("url-text").value;
+            const data ={
+                longURL:longURL
+            }
+            let url = document.getElementById("url-text").value;
+            let request = await fetch(`${BASE_URL}/url`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            const message = await request.text();
+            alert(message);
+        })
+    </script>
+</body>
+
+</html>
