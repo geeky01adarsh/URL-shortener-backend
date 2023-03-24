@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import Link from '../models/link.js';
 import { validateLink } from '../utils/validator.js';
 const linkRouter = express.Router();
-const baseURL = "http://localhost:5000/url/";
+const baseURL = "https://url-shortener-aixp.onrender.com/";
 
 // create an url
 linkRouter.post('/', async (req, res) => {
