@@ -1,5 +1,6 @@
 ## URL-Shortner
 
+URL Shortener is intended to short any big urls in seconds.
 Basic front end (made up in HTML only) takes up an email and return a shorten email for any valid email.
 
 To run the project on your local system. 
