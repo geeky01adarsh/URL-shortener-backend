@@ -15,10 +15,10 @@ linkRouter.post('/', async (req, res) => {
         res.send("You entered a wrong URL");
         return;
     }
-    const existURL = await Link.find({ link: longURL });
-    if (existURL.length) {
+    const existURL = await Link.findOne({ link: longURL });
+    if (existURL) {
         const shortenURL = baseURL + existURL[0].shorten_link;
-        res.send(shortenURL);
+        res.statusMessage(200).send(shortenURL);
         return;
     }
     let shortURL;
