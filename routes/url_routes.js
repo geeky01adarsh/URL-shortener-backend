@@ -30,7 +30,7 @@ linkRouter.post('/', async (req, res) => {
         shorten_link:shortURL
     })
     try {await newLink.save(); } catch(err) {
-        console.log(err)
+        console.error(err)
     }
     res.send(baseURL+shortURL);
 })
