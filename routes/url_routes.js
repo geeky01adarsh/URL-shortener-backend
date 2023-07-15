@@ -8,8 +8,6 @@ const baseURL = process.env.BASE_URL;
 // create an url
 linkRouter.post('/', async (req, res) => {
     const { longURL } = req.body;
-    // const urlRegex = new RegExp()
-    // const regex = new RegExp("((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)");
     const validLink = await validateLink(longURL);
     if (!validLink) {
         res.send("You entered a wrong URL");
