@@ -37,7 +37,7 @@ linkRouter.post('/', async (req, res) => {
 
 // redirect to the base url
 linkRouter.get('/:id', async (req, res) => {
-    // console.log(req.params.id)
+    console.log(req.params.id)
     const shortURL = req.params.id;
     const existsURL = await Link.find({ shorten_link: shortURL });
     if (!(existsURL).length) {
