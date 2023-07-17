@@ -39,7 +39,7 @@ linkRouter.post('/', async (req, res) => {
 linkRouter.get('/:id', async (req, res) => {
     console.log(req.params.id)
     const shortURL = req.params.id;
-    const existsURL = await Link.find({ shorten_link: shortURL });
+    const existsURL = await Link.findOne({ shorten_link: shortURL });
     if (!(existsURL).length) {
         res.send("No such URL found");
         return;
